@@ -9,6 +9,8 @@ public class App implements IAppDelegate {
     }
     private void initiateMenu() {
         mainMenu = new MainMenu();
+        mainMenu.appDelegate = this;
+        currentMenu = mainMenu;
     }
     public void enter() {
         this.currentMenu.enter();

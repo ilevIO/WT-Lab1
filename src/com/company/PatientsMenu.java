@@ -14,7 +14,7 @@ class SortPatientsByName implements Comparator<IPatient> {
 /**/
 public class PatientsMenu extends ActionMenu {
     private TableView patientsTableView;
-    private ArrayList<IPatient> patients;
+    private ArrayList<IPatient> patients = new ArrayList<IPatient>();
     private String getInput(String prompt) {
         Scanner input = new Scanner(System.in);
         String name = "";
@@ -47,6 +47,8 @@ public class PatientsMenu extends ActionMenu {
         }
         //read DOB
         //read ID
+        this.patients.add(newPatient);
+        this.reloadPatientsTable();
 
     }
     private void removePatient() {
@@ -93,8 +95,11 @@ public class PatientsMenu extends ActionMenu {
     private void showDetail() {
         System.out.print("...");
         int num = 0;
-        //get input
-        this.patients.get(num-1).showDetail();
+        Scanner input = new Scanner(System.in);
+        num = input.nextInt();
+        if (num < this.patients.size()) {
+            this.patients.get(num - 1).showDetail();
+        }
     }
     @Override
     protected String getName() {
@@ -102,7 +107,6 @@ public class PatientsMenu extends ActionMenu {
     }
     @Override
     protected void initiateActions() {
-        //this.actions.add(new MenuAction("Show patients", this.appDelegate));
         this.actions.add(new MenuAction("Add new patient", this.appDelegate));
         this.actions.add(new MenuAction("Remove patient", this.appDelegate));
         this.actions.add(new MenuAction("Find patient", this.appDelegate));
@@ -126,12 +130,31 @@ public class PatientsMenu extends ActionMenu {
             default: break;
         }
     }
-
+    private void reloadPatientsTable() {
+        patientsTableView.clear();
+        for (int i = 0; i < patients.size(); i++) {
+            patientsTableView.addCell(patients.get(i).getName() + patients.get(i).getSecondName()+patients.get(i).getSurname());
+        }
+    }
+    private void loadPatients() {
+        this.patients.add(Patient.random());
+        this.patients.add(Patient.random());
+        this.patients.add(Patient.random());
+        reloadPatientsTable();
+    }
     @Override
     public void draw() {
         patientsTableView.draw();
         for (int i = 0; i < actions.size(); i++) {
+            System.out.printf("%d. ", i+1);
             actions.get(i).draw();
         }
+    }
+    public PatientsMenu() {
+        this.patientsTableView = new TableView();
+        this.loadPatients();
+    }
+    public PatientsMenu(IAppDelegate appDelegate) {
+
     }
 }

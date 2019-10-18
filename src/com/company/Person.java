@@ -8,6 +8,7 @@ public class Person implements IPerson {
     private String lastName;
     private Date dob;
     private String note;
+
     @Override
     public void setName(String name) {
         this.name = name;
@@ -61,5 +62,12 @@ public class Person implements IPerson {
     @Override
     public void showDetail() {
 
+    }
+    static Person random() {
+        Person person = new Person();
+        person.setName("Some");
+        person.setSecondName("Interesting");
+        person.setSurname("Person");
+        return person;
     }
 }

@@ -3,7 +3,7 @@ package com.company;
 import java.io.Serializable;
 import java.util.Collection;
 
-public interface IHospitalStructure extends Serializable {
+public interface IHospitalData extends Serializable {
     Collection<IPatient> getPatients();
     Collection<IEmployee> getEmployees();
     String serialize();

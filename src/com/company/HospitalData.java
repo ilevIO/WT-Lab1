@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class HospitalStructure implements IHospitalStructure{
+public class HospitalData implements IHospitalData {
 
     @Override
     public Collection<IPatient> getPatients() {
@@ -24,7 +24,7 @@ public class HospitalStructure implements IHospitalStructure{
     public void serializeToFile() {
 
     }
-    public HospitalStructure(Collection<IPatient> patients, Collection<IEmployee> employees) {
+    public HospitalData(Collection<IPatient> patients, Collection<IEmployee> employees) {
 
     }
 }

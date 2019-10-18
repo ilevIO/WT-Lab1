@@ -5,7 +5,7 @@ import java.io.Serializable;
 public interface IEmployee
 {
     Comparable getSalary();
-    void setSalary(Comparable newSalary);
+    void setSalary(int newSalary);
     IPersonalData getPersonalData();
     void setPersonalData(IPersonalData personalData);
     void assignDepartment(IDepartment department);

@@ -1,7 +1,7 @@
 package com.company;
 
 public interface IHospital {
-    IHospitalStructure getHospitalStructure();
+    IHospitalData getHospitalStructure();
     IPatient getPatientByName(String name);
     IEmployee getEmployeeByName(String name);
 }

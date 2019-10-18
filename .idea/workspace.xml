@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d622906f-7486-48a4-8b45-06d40cdac5b2" name="Default Changelist" comment="" />
+    <list default="true" id="d622906f-7486-48a4-8b45-06d40cdac5b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Cabinet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/CabinetsMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Ward.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/ActionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ActionMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/HospitalStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/HospitalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/IEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/IEmployee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/IHospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/IHospital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/IHospitalStructure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/IHospitalData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/PatientsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/PatientsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/TableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/TableView.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +36,16 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1RpXMtH98E0vJgd4ZKmN6CG4oo5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -40,6 +69,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -53,5 +87,34 @@
       <updated>1570364967328</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/MainMenu.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/App.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

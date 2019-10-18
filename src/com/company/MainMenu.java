@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class MainMenu extends ActionMenu {
     @Override
     protected String getName() {
@@ -7,6 +9,7 @@ public class MainMenu extends ActionMenu {
     }
     @Override
     protected void initiateActions() {
+        this.actions = new ArrayList<MenuAction>();
         this.actions.add(new MenuAction("Patients", this.appDelegate));
         this.actions.add(new MenuAction("Employees", this.appDelegate));
         this.actions.add(new MenuAction("Cabinets", this.appDelegate));
@@ -26,6 +29,7 @@ public class MainMenu extends ActionMenu {
                 appDelegate.segueTo(new EmployeesMenu());
                 break;
             case 3:
+                appDelegate.segueTo(new CabinetsMenu());
                 break;
                 //appDelegate.segueTo();
             default: break;
@@ -35,7 +39,7 @@ public class MainMenu extends ActionMenu {
     @Override
     public void draw() {
         for(int i = 0; i < this.actions.size(); i++) {
-            System.out.printf("%d. ", i);
+            System.out.printf("%d. ", i+1);
             this.actions.get(i).draw();
         }
     }

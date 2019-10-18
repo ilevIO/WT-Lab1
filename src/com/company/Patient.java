@@ -4,7 +4,13 @@ public class Patient extends Person implements IPatient {
     public Patient() {
 
     }
-
+    public static Patient random() {
+        Patient patient = new Patient();
+        patient.setName("Some");
+        patient.setSecondName("Interesting");
+        patient.setSurname("Person");
+        return patient;
+    }
     @Override
     public void showDetail() {
         System.out.printf("Name: %s\n", this.getName());
