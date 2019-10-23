@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="11.0.4" class="java.beans.XMLDecoder">
+ <object class="com.company.people.Doctor">
+  <void property="DOB">
+   <object class="java.util.Date">
+    <long>919029600000</long>
+   </object>
+  </void>
+  <void property="name">
+   <string>My</string>
+  </void>
+  <void property="rank">
+   <string>Doctor</string>
+  </void>
+  <void property="secondName">
+   <string>Favourite</string>
+  </void>
+  <void property="surname">
+   <string>Employee</string>
+  </void>
+ </object>
+</java>

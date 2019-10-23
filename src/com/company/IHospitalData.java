@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.people.IEmployee;
+import com.company.people.IPatient;
+
 import java.io.Serializable;
 import java.util.Collection;
 

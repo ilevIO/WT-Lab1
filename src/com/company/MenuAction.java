@@ -9,6 +9,9 @@ public class MenuAction {
     }
     public void execute() {
     }
+    public void setTitle(String title) {
+        this.name = title;
+    }
     public MenuAction(String name) {
         this.appDelegate = null;
         this.name = name;

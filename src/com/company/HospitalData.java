@@ -1,10 +1,12 @@
 package com.company;
 
+import com.company.people.IEmployee;
+import com.company.people.IPatient;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
-
-public class HospitalData implements IHospitalData {
-
+public class HospitalData implements IHospitalData, Serializable {
     @Override
     public Collection<IPatient> getPatients() {
         return new ArrayList<IPatient>();

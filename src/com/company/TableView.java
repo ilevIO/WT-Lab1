@@ -7,8 +7,8 @@ public class TableView {
     public void addCell(String title) {
         this.stringCells.add(title);
     }
-    public void selectCell(int num) {
-
+    public String selectCell(int num) {
+        return stringCells.get(num);
     }
     public void clear() {
         this.stringCells.clear();

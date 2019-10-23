@@ -1,12 +1,13 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public abstract class ActionMenu {
     public IAppDelegate appDelegate;
     public boolean shouldReturn = false;
-    protected ArrayList<MenuAction> actions = new ArrayList<MenuAction>();
+    protected List<MenuAction> actions = new ArrayList<MenuAction>();
     //since I cannot figure out how to use closures in MenuAction like in swift
     //protected ArrayList<String> actionStrings;
     abstract protected String getName();

@@ -3,6 +3,7 @@ package com.company;
 public class App implements IAppDelegate {
     private ActionMenu currentMenu;
     private ActionMenu mainMenu;
+    //public static Hospital hospital = new Hospital();
     //private ArrayList<PageMenu> menues;
     public void drawMainMenu() {
 
@@ -15,7 +16,11 @@ public class App implements IAppDelegate {
     public void enter() {
         this.currentMenu.enter();
     }
+    private void readData() {
+
+    }
     App () {
+        readData();
         initiateMenu();
         this.currentMenu = mainMenu;
     }

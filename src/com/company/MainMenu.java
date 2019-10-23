@@ -7,6 +7,7 @@ public class MainMenu extends ActionMenu {
     protected String getName() {
         return "Main";
     }
+
     @Override
     protected void initiateActions() {
         this.actions = new ArrayList<MenuAction>();
@@ -31,15 +32,16 @@ public class MainMenu extends ActionMenu {
             case 3:
                 appDelegate.segueTo(new CabinetsMenu());
                 break;
-                //appDelegate.segueTo();
-            default: break;
+            //appDelegate.segueTo();
+            default:
+                break;
         }
     }
 
     @Override
     public void draw() {
-        for(int i = 0; i < this.actions.size(); i++) {
-            System.out.printf("%d. ", i+1);
+        for (int i = 0; i < this.actions.size(); i++) {
+            System.out.printf("%d. ", i + 1);
             this.actions.get(i).draw();
         }
     }
