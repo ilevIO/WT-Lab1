@@ -7,8 +7,8 @@ public interface IPatient extends Serializable, IPerson {
     void getHistory();
     void setDiagnosis(String diagnosis);
     String getDiagnosis();
-    void assignDoctor(Employee doctor);
-    void removeDoctor(Employee doctor);
+    void assignDoctor(IEmployee doctor);
+    void removeDoctor(IEmployee doctor);
     List getDoctors();
     void setDoctors(List doctors);
 

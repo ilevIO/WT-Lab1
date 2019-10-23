@@ -59,8 +59,18 @@ public class EmployeesMenu extends ActionMenu {
         }
     }
     private void searchEmployees() {
-        System.out.print("Name: ");
         Scanner input = new Scanner(System.in);
+        System.out.print("ID: ");
+        var idStr = input.nextLine();
+        int id = 0;
+        if (!idStr.isBlank()) {
+            try {
+                id = Integer.parseInt(idStr);
+            } catch (NumberFormatException e) {
+                id = 0;
+            }
+        }
+        System.out.print("Name: ");
         var name = input.nextLine();
         if (name.isBlank()) {
             name = null;
@@ -87,14 +97,15 @@ public class EmployeesMenu extends ActionMenu {
         ArrayList<IEmployee> suitableEmployees = new ArrayList<IEmployee>();
         int suitableCount = 0;
         for (int i = 0; i < employees().size(); i++) {
-            if (Hospital.shared.getEmployees().get(i).fitsDescription(name, secondName, lastName, dob)) {
+            if (Hospital.shared.getEmployees().get(i).fitsDescription(id, name, secondName, lastName, dob)) {
                 suitableEmployees.add(Hospital.shared.getEmployees().get(i));
                 suitableCount++;
                 System.out.printf("%d, %s %s %s\n", suitableCount, Hospital.shared.getEmployees().get(i).getName(), Hospital.shared.getEmployees().get(i).getSecondName(), Hospital.shared.getEmployees().get(i).getSurname());
 
             }
         }
-        actions.get(6-1).draw();
+        System.out.print("1. ");
+        actions.get(5-1).draw();
         int actionNum;
         actionNum = input.nextInt();
         switch (actionNum) {
@@ -130,9 +141,9 @@ public class EmployeesMenu extends ActionMenu {
                 case 1: sortEmployeesByName();
                     return;
                 case 2: sortEmployeesByDateAdded();
-                break;
+                return;
                 case 3: sortEmployeesByDateModified();
-                break;
+                return;
                 case 0: return;
                 default: break;
             }

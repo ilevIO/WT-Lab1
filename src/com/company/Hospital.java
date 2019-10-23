@@ -91,28 +91,6 @@ public class Hospital implements Serializable {
         }
         encoder.writeObject(h);
         encoder.close();
-        /*Movie bourneIndentity=new Movie("The Bourne Identity",119,"Doug Liman",2002,"Matt Damon, Franka Potente");
-        Movie bourneSupermacy=new Movie("The Bourne Supremacy",108,"Paul Greengrass",2004,"Matt Damon, Franka Potente, Joan Allen");
-        Movie bourneUltimatum=new Movie("The Bourne Ultimatum",115,"Paul Greengrass",2007,"Matt Damon, Edgar Ramirez, Joan Allen");
-        Movie bourneLegacy=new Movie("The Bourne Legacy",135,"Tony Gilroy",2012,"Jeremy Renner, Rachel Weisz, Edward Norton");
-
-        List moviesList=new ArrayList();
-        moviesList.add(bourneIndentity);
-        moviesList.add(bourneSupermacy);
-        moviesList.add(bourneUltimatum);
-        moviesList.add(bourneLegacy);
-
-        DVD bourneSeries=new DVD();
-        bourneSeries.setMovies(moviesList);
-
-        XMLEncoder encoder=null;
-        try{
-            encoder=new XMLEncoder(new BufferedOutputStream(new FileOutputStream("Test.xml")));
-        }catch(FileNotFoundException fileNotFound){
-            System.out.println("ERROR: While Creating or Opening the File dvd.xml");
-        }
-        encoder.writeObject(bourneSeries);
-        encoder.close();*/
     }
     public void deserialize() {
         XMLDecoder decoder=null;

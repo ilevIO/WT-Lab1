@@ -13,13 +13,13 @@ public class Patient extends Person implements IPatient {
     private String diagnosis;
     public Patient() {
     }
-    public static Patient random() {
+    /*public static Patient random() {
         Patient patient = new Patient();
         patient.setName("Some");
         patient.setSecondName("Interesting");
         patient.setSurname("Person");
         return patient;
-    }
+    }*/
     @Override
     public void showDetail() {
         super.showDetail();
@@ -43,15 +43,15 @@ public class Patient extends Person implements IPatient {
     }
 
     @Override
-    public void assignDoctor(Employee doctor) {
+    public void assignDoctor(IEmployee doctor) {
         doctors.add(doctor);
         this.dateModified = new Date();
     }
 
     @Override
-    public void removeDoctor(Employee doctor) {
+    public void removeDoctor(IEmployee doctor) {
         int i = 0;
-        for (; i < doctors.size() && doctors.get(i) != doctor; i++) {
+        for (; i < doctors.size() && !doctors.get(i).equals(doctor); i++) {
         }
         doctors.remove(i);
         this.dateModified = new Date();

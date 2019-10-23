@@ -19,7 +19,9 @@ public interface IPerson extends ISearchable {
     void showDetail();
     Date getAdditionDate();
     Date getModificationDate();
-    boolean fitsDescription(String name, String secondName, String lastName, Date dob);
+    boolean fitsDescription(int id, String name, String secondName, String lastName, Date dob);
     void setLocation(Room room);
     Room getLocation();
+    int getId();
+    void setId(int id);
 }

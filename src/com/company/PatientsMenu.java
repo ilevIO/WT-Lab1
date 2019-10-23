@@ -75,7 +75,7 @@ public class PatientsMenu extends ActionMenu {
         int row = input.nextInt();
         Hospital.shared.getPatients().remove(row - 1);
     }
-    private void showDetailInList(ArrayList<IEmployee> list) {
+    private void showDetailInList(List<IPatient> list) {
         System.out.print("Enter number of a patient: ");
         int num = 0;
         Scanner input = new Scanner(System.in);
@@ -85,8 +85,18 @@ public class PatientsMenu extends ActionMenu {
         }
     }
     private void searchPatients() {
-        System.out.print("Name: ");
         Scanner input = new Scanner(System.in);
+        System.out.print("ID: ");
+        var idStr = input.nextLine();
+        int id = 0;
+        if (!idStr.isBlank()) {
+            try {
+                id = Integer.parseInt(idStr);
+            } catch (NumberFormatException e) {
+                id = 0;
+            }
+        }
+        System.out.print("Name: ");
         var name = input.nextLine();
         if (name.isBlank()) {
             name = null;
@@ -110,17 +120,18 @@ public class PatientsMenu extends ActionMenu {
         } catch (ParseException e) {
             //e.printStackTrace();
         }
-        ArrayList<IEmployee> suitableEmployees = new ArrayList<IEmployee>();
+        List<IPatient> suitableEmployees = new ArrayList<IPatient>();
         int suitableCount = 0;
         for (int i = 0; i < Hospital.shared.getPatients().size(); i++) {
-            if (Hospital.shared.getEmployees().get(i).fitsDescription(name, secondName, lastName, dob)) {
-                suitableEmployees.add(Hospital.shared.getEmployees().get(i));
+            if (Hospital.shared.getPatients().get(i).fitsDescription(id, name, secondName, lastName, dob)) {
+                suitableEmployees.add(Hospital.shared.getPatients().get(i));
                 suitableCount++;
-                System.out.printf("%d, %s %s %s\n", suitableCount, Hospital.shared.getEmployees().get(i).getName(), Hospital.shared.getEmployees().get(i).getSecondName(), Hospital.shared.getEmployees().get(i).getSurname());
+                System.out.printf("%d, %s %s %s\n", suitableCount, Hospital.shared.getPatients().get(i).getName(), Hospital.shared.getPatients().get(i).getSecondName(), Hospital.shared.getPatients().get(i).getSurname());
 
             }
         }
-        actions.get(6-1).draw();
+        System.out.print("1. ");
+        actions.get(5-1).draw();
         int actionNum;
         actionNum = input.nextInt();
         switch (actionNum) {
@@ -188,24 +199,28 @@ public class PatientsMenu extends ActionMenu {
             switch(actionNum) {
                 case 1: {
                     System.out.print("Enter new name: ");
+                    input = new Scanner(System.in);
                     String name = input.nextLine();
                     patient.setName(name);
                     break;
                 }
                 case 2: {
                     System.out.print("Enter new second name: ");
+                    input = new Scanner(System.in);
                     String secondName = input.nextLine();
                     patient.setSecondName(secondName);
                     break;
                 }
                 case 3: {
                     System.out.print("Enter new last name: ");
+                    input = new Scanner(System.in);
                     String name = input.nextLine();
                     patient.setSurname(name);
                     break;
                 }
                 case 4: {
-                    System.out.print("Enter new last DOB: ");
+                    System.out.print("Enter new DOB: ");
+                    input = new Scanner(System.in);
                     String dobStr = input.nextLine();
                     try {
                         Date dob = new SimpleDateFormat("dd.MM.yyyy").parse(dobStr);
@@ -217,6 +232,59 @@ public class PatientsMenu extends ActionMenu {
                 case 5:
                     break;
                 case 6:
+                    System.out.print("Search doctor: ");
+                    input = new Scanner(System.in);
+                    System.out.print("ID: ");
+                    var idStr = input.nextLine();
+                    int id = 0;
+                    if (!idStr.isBlank()) {
+                        try {
+                            id = Integer.parseInt(idStr);
+                        } catch (NumberFormatException e) {
+                            id = 0;
+                        }
+                    }
+                    System.out.print("Name: ");
+                    var name = input.nextLine();
+                    if (name.isBlank()) {
+                        name = null;
+                    }
+                    System.out.print("Second name: ");
+                    var secondName = input.nextLine();
+                    if (secondName.isBlank()) {
+                        secondName = null;
+                    }
+                    System.out.print("Last name: ");
+                    var lastName = input.nextLine();
+                    if (lastName.isBlank()) {
+                        lastName = null;
+                    }
+                    System.out.print("DOB (dd.mm.yyyy): ");
+                    var dobStr = input.nextLine();
+                    Date dob = null;
+                    try {
+                        var dateFormat = new SimpleDateFormat("dd.mm.yyyy");
+                        dob = dateFormat.parse(dobStr);
+                    } catch (ParseException e) {
+                        //e.printStackTrace();
+                    }
+                    ArrayList<IEmployee> suitableEmployees = new ArrayList<IEmployee>();
+                    int suitableCount = 0;
+                    ArrayList<Integer> indexArray = new ArrayList<Integer>();
+                    for (int i = 0; i < Hospital.shared.getEmployees().size(); i++) {
+                        if (Hospital.shared.getEmployees().get(i).fitsDescription(id, name, secondName, lastName, dob)) {
+                            suitableEmployees.add(Hospital.shared.getEmployees().get(i));
+                            suitableCount++;
+                            System.out.printf("%d. %s %s %s\n", suitableCount, Hospital.shared.getEmployees().get(i).getName(), Hospital.shared.getEmployees().get(i).getSecondName(), Hospital.shared.getEmployees().get(i).getSurname());
+                            indexArray.add(i);
+                        }
+                    }
+                    System.out.print("Enter number of doctor: ");
+                    //actions.get(5-1).draw();
+                    int selectionNum;
+                    selectionNum = input.nextInt();
+                    Hospital.shared.getEmployees().get(indexArray.get(selectionNum)-1).addPatient(patient);
+                    patient.assignDoctor(Hospital.shared.getEmployees().get(indexArray.get(selectionNum)-1));
                     break;
                 case 7:
                     break;
@@ -282,15 +350,8 @@ public class PatientsMenu extends ActionMenu {
         List<IPatient> tmpPatients = Hospital.shared.getPatients();
         //tmpPatients.sort(this.patientsSortingMethod);
         for (int i = 0; i < tmpPatients.size(); i++) {
-            patientsTableView.addCell(tmpPatients.get(i).getName() + " " + tmpPatients.get(i).getSecondName()+" " + tmpPatients.get(i).getSurname());
+            patientsTableView.addCell(tmpPatients.get(i).getName() + " " + tmpPatients.get(i).getSecondName() + " " + tmpPatients.get(i).getSurname());
         }
-    }
-    private void loadPatients() {
-        //read from file
-        Hospital.shared.addPatient(Patient.random());
-        Hospital.shared.addPatient(Patient.random());
-        Hospital.shared.addPatient(Patient.random());
-        reloadPatientsTable();
     }
     @Override
     public void draw() {
@@ -304,9 +365,6 @@ public class PatientsMenu extends ActionMenu {
     }
     public PatientsMenu() {
         this.patientsTableView = new TableView();
-        this.loadPatients();
-    }
-    public PatientsMenu(IAppDelegate appDelegate) {
-
+        reloadPatientsTable();
     }
 }

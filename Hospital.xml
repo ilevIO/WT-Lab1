@@ -19,7 +19,7 @@
   </void>
   <void property="employees">
    <void method="add">
-    <object class="com.company.people.Employee">
+    <object class="com.company.people.Employee" id="Employee0">
      <void property="DOB">
       <object class="java.util.Date">
        <long>1046642400000</long>
@@ -90,6 +90,30 @@
      </void>
     </object>
    </void>
+   <void method="add">
+    <object class="com.company.people.Employee">
+     <void property="DOB">
+      <object class="java.util.Date">
+       <long>699660000000</long>
+      </object>
+     </void>
+     <void property="location">
+      <object idref="Room0"/>
+     </void>
+     <void property="name">
+      <string>The</string>
+     </void>
+     <void property="rank">
+      <string>d</string>
+     </void>
+     <void property="secondName">
+      <string>Fourth</string>
+     </void>
+     <void property="surname">
+      <string>Doctor</string>
+     </void>
+    </object>
+   </void>
   </void>
   <void property="patients">
    <void method="add">
@@ -133,10 +157,54 @@
    </void>
    <void method="add">
     <object class="com.company.people.Patient">
+     <void property="name">
+      <string>Changed</string>
+     </void>
+     <void property="secondName">
+      <string>Interesting</string>
+     </void>
+     <void property="surname">
+      <string>Person</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="com.company.people.Patient">
+     <void property="name">
+      <string>Some</string>
+     </void>
+     <void property="secondName">
+      <string>Interesting</string>
+     </void>
+     <void property="surname">
+      <string>Person</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="com.company.people.Patient">
+     <void property="name">
+      <string>Some</string>
+     </void>
+     <void property="secondName">
+      <string>Interesting</string>
+     </void>
+     <void property="surname">
+      <string>Person</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="com.company.people.Patient" id="Patient0">
      <void property="DOB">
       <object class="java.util.Date">
        <long>-27106887600000</long>
       </object>
+     </void>
+     <void property="doctors">
+      <void method="add">
+       <object idref="Employee0"/>
+      </void>
      </void>
      <void property="name">
       <string>My</string>
@@ -146,45 +214,6 @@
      </void>
      <void property="surname">
       <string>Patient</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Patient">
-     <void property="name">
-      <string>Some</string>
-     </void>
-     <void property="secondName">
-      <string>Interesting</string>
-     </void>
-     <void property="surname">
-      <string>Person</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Patient">
-     <void property="name">
-      <string>Some</string>
-     </void>
-     <void property="secondName">
-      <string>Interesting</string>
-     </void>
-     <void property="surname">
-      <string>Person</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Patient">
-     <void property="name">
-      <string>Some</string>
-     </void>
-     <void property="secondName">
-      <string>Interesting</string>
-     </void>
-     <void property="surname">
-      <string>Person</string>
      </void>
     </object>
    </void>

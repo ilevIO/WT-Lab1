@@ -2,11 +2,15 @@ package com.company.people;
 
 import com.company.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Employee extends Person implements IEmployee {
     private int salary;
     private Room cabinet;
     private String rank;
+    private List patients = new ArrayList<IPatient>();
     @Override
     public Comparable getSalary() {
         return this.salary;
@@ -45,6 +49,30 @@ public class Employee extends Person implements IEmployee {
     @Override
     public String getRank() {
         return this.rank;
+    }
+
+    @Override
+    public void addPatient(IPatient patient) {
+        this.patients.add(patient);
+    }
+
+    @Override
+    public void setPatients(List patients) {
+        this.patients = patients;
+    }
+
+    @Override
+    public List getPatients() {
+        return null;
+    }
+
+    @Override
+    public void removePatient(IPatient patient) {
+        int i = 0;
+        for (; i < patients.size() && !patients.get(i).equals(patient); i++){}
+        if (i < patients.size()) {
+            patients.remove(i);
+        }
     }
 
     public static Employee random() {
