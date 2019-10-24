@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d622906f-7486-48a4-8b45-06d40cdac5b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/company/WardsMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/CabinetsMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/CabinetsMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/EmployeesMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/EmployeesMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CabinetsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/CabinetsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EmployeesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/EmployeesMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/PatientsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/PatientsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/Employee.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
