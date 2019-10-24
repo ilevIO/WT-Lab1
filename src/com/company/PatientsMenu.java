@@ -76,6 +76,12 @@ public class PatientsMenu extends ActionMenu {
         var patients = Hospital.shared.getPatients();
         for (int i = 0; i < patients.size(); i++) {
             if (patients.get(i).getId() == id) {
+                var patient = Hospital.shared.getPatients().get(i);
+                if (patient.getLocation() != null) {
+                    var occupant = new ArrayList<IPerson>();
+                    occupant.add(patient);
+                    patient.getLocation().removeOccupants(occupant);
+                }
                 Hospital.shared.getPatients().remove(i);
                 //patients.remove(i);
                 i--;

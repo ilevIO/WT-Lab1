@@ -85,13 +85,13 @@ public class Employee extends Person implements IEmployee {
     }
     @Override
     public void showDetail() {
-        System.out.println(toString());
-        /*super.showDetail();
+        //System.out.println(toString());
+        super.showDetail();
         System.out.printf("Salary: %d$\n", salary);
         System.out.printf("Rank: %s\n",this.rank);
         if (this.cabinet != null) {
             System.out.printf("Cabinet: %s\n", this.cabinet.getName());
-        }*/
+        }
     }
     @Override
     public String toString() {

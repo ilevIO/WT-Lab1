@@ -160,6 +160,7 @@ public class EmployeesMenu extends ActionMenu {
         num = input.nextInt();
         if (num <= Hospital.shared.getEmployees().size()) {
             Hospital.shared.getEmployees().get(num - 1).showDetail();
+            displayEmployeeEditingOptions(Hospital.shared.getEmployees().get(num - 1));
         }
     }
     private void showDetailInList(ArrayList<IEmployee> list) {
@@ -313,6 +314,9 @@ public class EmployeesMenu extends ActionMenu {
         newEmployee.setSurname(lastName);
         newEmployee.setSalary(salary);
         newEmployee.setLocation(cabinet);
+        var occupants = new ArrayList<IPerson>();
+        occupants.add(newEmployee);
+        cabinet.addOccupants(occupants);
         newEmployee.setDOB(dob);
         Hospital.shared.addEmployee(newEmployee);
         try {
@@ -324,7 +328,7 @@ public class EmployeesMenu extends ActionMenu {
 
         this.reloadEmployeesTable();
     }
-    private void displayPatientEditingOptions(IEmployee employee) {
+    private void displayEmployeeEditingOptions(IEmployee employee) {
         while(true) {
             System.out.println("1: Name");
             System.out.println("2: Second name");

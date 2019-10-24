@@ -5,176 +5,45 @@
    <void method="add">
     <object class="com.company.Room" id="Room0">
      <void property="name">
-      <string>21</string>
+      <string>212</string>
      </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.Room" id="Room1">
-     <void property="name">
-      <string>5</string>
+     <void property="occupants">
+      <void method="add">
+       <object class="com.company.people.Employee" id="Employee0">
+        <void property="DOB">
+         <object class="java.util.Date">
+          <long>950306400000</long>
+         </object>
+        </void>
+        <void property="dateAdded">
+         <object class="java.util.Date">
+          <long>1571888395431</long>
+         </object>
+        </void>
+        <void property="location">
+         <object idref="Room0"/>
+        </void>
+        <void property="name">
+         <string>My</string>
+        </void>
+        <void property="rank">
+         <string>Doctor</string>
+        </void>
+        <void property="secondName">
+         <string>New</string>
+        </void>
+        <void property="surname">
+         <string>Employee</string>
+        </void>
+       </object>
+      </void>
      </void>
     </object>
    </void>
   </void>
   <void property="employees">
    <void method="add">
-    <object class="com.company.people.Employee" id="Employee0">
-     <void property="DOB">
-      <object class="java.util.Date">
-       <long>1046642400000</long>
-      </object>
-     </void>
-     <void property="dateAdded">
-      <object class="java.util.Date">
-       <long>1571878599926</long>
-      </object>
-     </void>
-     <void property="location">
-      <object idref="Room0"/>
-     </void>
-     <void property="name">
-      <string>My</string>
-     </void>
-     <void property="rank">
-      <string>d</string>
-     </void>
-     <void property="secondName">
-      <string>New</string>
-     </void>
-     <void property="surname">
-      <string>Employee</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Employee">
-     <void property="DOB">
-      <object class="java.util.Date">
-       <long>918770400000</long>
-      </object>
-     </void>
-     <void property="dateAdded">
-      <object class="java.util.Date">
-       <long>1571878599929</long>
-      </object>
-     </void>
-     <void property="location">
-      <object idref="Room1"/>
-     </void>
-     <void property="name">
-      <string>The</string>
-     </void>
-     <void property="rank">
-      <string>d</string>
-     </void>
-     <void property="secondName">
-      <string>Second</string>
-     </void>
-     <void property="surname">
-      <string>Employee</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Employee">
-     <void property="DOB">
-      <object class="java.util.Date">
-       <long>1081026000000</long>
-      </object>
-     </void>
-     <void property="dateAdded">
-      <object class="java.util.Date">
-       <long>1571878599931</long>
-      </object>
-     </void>
-     <void property="location">
-      <object idref="Room0"/>
-     </void>
-     <void property="name">
-      <string>Finally</string>
-     </void>
-     <void property="rank">
-      <string>c</string>
-     </void>
-     <void property="secondName">
-      <string>Third</string>
-     </void>
-     <void property="surname">
-      <string>Employee</string>
-     </void>
-    </object>
-   </void>
-   <void method="add">
-    <object class="com.company.people.Employee">
-     <void property="DOB">
-      <object class="java.util.Date">
-       <long>699660000000</long>
-      </object>
-     </void>
-     <void property="dateAdded">
-      <object class="java.util.Date">
-       <long>1571878599931</long>
-      </object>
-     </void>
-     <void property="location">
-      <object idref="Room0"/>
-     </void>
-     <void property="name">
-      <string>The</string>
-     </void>
-     <void property="rank">
-      <string>d</string>
-     </void>
-     <void property="secondName">
-      <string>Fourth</string>
-     </void>
-     <void property="surname">
-      <string>Doctor</string>
-     </void>
-    </object>
-   </void>
-  </void>
-  <void property="patients">
-   <void method="add">
-    <object class="com.company.people.Patient" id="Patient0">
-     <void property="DOB">
-      <object class="java.util.Date">
-       <long>918770400000</long>
-      </object>
-     </void>
-     <void property="dateAdded">
-      <object class="java.util.Date">
-       <long>1571878644503</long>
-      </object>
-     </void>
-     <void property="doctors">
-      <void method="add">
-       <object idref="Employee0"/>
-      </void>
-     </void>
-     <void property="location">
-      <object class="com.company.Room" id="Room2">
-       <void property="name">
-        <string>12</string>
-       </void>
-       <void property="occupants">
-        <void method="add">
-         <object idref="Patient0"/>
-        </void>
-       </void>
-      </object>
-     </void>
-     <void property="name">
-      <string>Brand</string>
-     </void>
-     <void property="secondName">
-      <string>New</string>
-     </void>
-     <void property="surname">
-      <string>Patient</string>
-     </void>
-    </object>
+    <object idref="Employee0"/>
    </void>
   </void>
  </object>

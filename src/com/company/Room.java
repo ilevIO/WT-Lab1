@@ -23,6 +23,9 @@ public class Room {
     public void setOccupants(List occupants){
         this.occupants = occupants;
     }
+    public List getOccupants() {
+        return this.occupants;
+    }
     public void removeOccupants(List occupants) {
         for (int i = 0; i < occupants.size(); i++) {
             for (int j = 0; j < this.occupants.size(); j++){
@@ -34,11 +37,17 @@ public class Room {
             }
         }
     }
-    public List getOccupants() {
-        return this.occupants;
-    }
     public Room(String name) {
         this.name = name;
     }
     public Room(){}
+
+    public void showDetail() {
+        System.out.print("Occupants: ");
+        List<IPerson> occupants = this.occupants;
+        for (int i = 0; i < occupants.size(); i++) {
+            System.out.printf("%d. %s %s %s\n", i + 1, occupants.get(i).getName(), occupants.get(i).getSecondName(), occupants.get(i).getSurname());
+        }
+        System.out.println("");
+    }
 }

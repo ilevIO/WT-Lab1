@@ -14,9 +14,7 @@ public class MainMenu extends ActionMenu {
         this.actions.add(new MenuAction("Patients", this.appDelegate));
         this.actions.add(new MenuAction("Employees", this.appDelegate));
         this.actions.add(new MenuAction("Cabinets", this.appDelegate));
-        //this.actions.add(new MenuAction("Departments", this.appDelegate));
         this.actions.add(new MenuAction("Wards", this.appDelegate));
-        this.actions.add(new MenuAction("Inventory", this.appDelegate));
     }
 
     @Override
@@ -31,6 +29,9 @@ public class MainMenu extends ActionMenu {
                 break;
             case 3:
                 appDelegate.segueTo(new CabinetsMenu());
+                break;
+            case 4:
+                appDelegate.segueTo(new WardsMenu());
                 break;
             //appDelegate.segueTo();
             default:
