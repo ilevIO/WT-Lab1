@@ -23,6 +23,17 @@ public class Room {
     public void setOccupants(List occupants){
         this.occupants = occupants;
     }
+    public void removeOccupants(List occupants) {
+        for (int i = 0; i < occupants.size(); i++) {
+            for (int j = 0; j < this.occupants.size(); j++){
+                if (occupants.get(i).equals(this.occupants.get(j))) {
+                    this.occupants.remove(j);
+                    j--;
+                    break;
+                }
+            }
+        }
+    }
     public List getOccupants() {
         return this.occupants;
     }

@@ -3,6 +3,7 @@ package com.company;
 //import com.company.people.Doctor;
 import com.company.people.Employee;
 import com.company.people.IEmployee;
+import com.company.people.IPatient;
 import com.company.people.IPerson;
 
 import java.text.ParseException;
@@ -171,6 +172,19 @@ public class EmployeesMenu extends ActionMenu {
         }
     }
     private void removeEmployee() {
+        System.out.print("ID: ");
+        Scanner input = new Scanner(System.in);
+        int id = input.nextInt();
+        var employees = Hospital.shared.getEmployees();
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getId() == id) {
+                Hospital.shared.getEmployees().remove(i);
+                //employees.remove(i);
+                i--;
+            }
+        }
+        Hospital.shared.serialize();
+        reloadEmployeesTable();
     }
 
     private void addEmployee() {
@@ -310,7 +324,187 @@ public class EmployeesMenu extends ActionMenu {
 
         this.reloadEmployeesTable();
     }
+    private void displayPatientEditingOptions(IEmployee employee) {
+        while(true) {
+            System.out.println("1: Name");
+            System.out.println("2: Second name");
+            System.out.println("3: Last name");
+            System.out.println("4: DOB");
+            System.out.println("5: ID");
+            System.out.println("6: Assigned patients");
+            System.out.println("7: Cabinet");
+            System.out.println("8: Salary");
+            System.out.println("9: Rank");
+            System.out.println("0: return");
+            Scanner input = new Scanner(System.in);
+            int actionNum = input.nextInt();
+            switch(actionNum) {
+                case 1: {
+                    System.out.print("Enter new name: ");
+                    input = new Scanner(System.in);
+                    String name = input.nextLine();
+                    employee.setName(name);
+                    break;
+                }
+                case 2: {
+                    System.out.print("Enter new second name: ");
+                    input = new Scanner(System.in);
+                    String secondName = input.nextLine();
+                    employee.setSecondName(secondName);
+                    break;
+                }
+                case 3: {
+                    System.out.print("Enter new last name: ");
+                    input = new Scanner(System.in);
+                    String name = input.nextLine();
+                    employee.setSurname(name);
+                    break;
+                }
+                case 4: {
+                    System.out.print("Enter new DOB: ");
+                    input = new Scanner(System.in);
+                    String dobStr = input.nextLine();
+                    try {
+                        Date dob = new SimpleDateFormat("dd.MM.yyyy").parse(dobStr);
+                        employee.setDOB(dob);
+                    } catch (ParseException e) {
+                    }
+                    break;
+                }
+                case 5:
+                    System.out.print("Enter new ID: ");
+                    input = new Scanner(System.in);
+                    String newIdStr = input.nextLine();
+                    try {
+                        int id = Integer.parseInt(newIdStr);
+                        employee.setId(id);
+                    } catch (NumberFormatException e) {
 
+                    }
+                    break;
+                case 6:
+                    System.out.print("Search patient: ");
+                    input = new Scanner(System.in);
+                    System.out.print("ID: ");
+                    var idStr = input.nextLine();
+                    int id = 0;
+                    if (!idStr.isBlank()) {
+                        try {
+                            id = Integer.parseInt(idStr);
+                        } catch (NumberFormatException e) {
+                            id = 0;
+                        }
+                    }
+                    System.out.print("Name: ");
+                    var name = input.nextLine();
+                    if (name.isBlank()) {
+                        name = null;
+                    }
+                    System.out.print("Second name: ");
+                    var secondName = input.nextLine();
+                    if (secondName.isBlank()) {
+                        secondName = null;
+                    }
+                    System.out.print("Last name: ");
+                    var lastName = input.nextLine();
+                    if (lastName.isBlank()) {
+                        lastName = null;
+                    }
+                    ArrayList<IPatient> suitableEmployees = new ArrayList<IPatient>();
+                    int suitableCount = 0;
+                    ArrayList<Integer> indexArray = new ArrayList<Integer>();
+                    for (int i = 0; i < Hospital.shared.getPatients().size(); i++) {
+                        if (Hospital.shared.getPatients().get(i).fitsDescription(id, name, secondName, lastName, null)) {
+                            suitableEmployees.add(Hospital.shared.getPatients().get(i));
+                            suitableCount++;
+                            System.out.printf("%d. %s %s %s\n", suitableCount, Hospital.shared.getPatients().get(i).getName(), Hospital.shared.getPatients().get(i).getSecondName(), Hospital.shared.getPatients().get(i).getSurname());
+                            indexArray.add(i);
+                        }
+                    }
+                    System.out.print("Enter number of patient: ");
+                    int selectionNum;
+                    selectionNum = input.nextInt();
+                    Hospital.shared.getPatients().get(indexArray.get(selectionNum)-1).assignDoctor(employee);
+                    employee.addPatient(Hospital.shared.getPatients().get(indexArray.get(selectionNum)-1));
+                    break;
+                case 7:
+                    String cabStr;
+                    boolean cabinetFound = false;
+                    List occupant = new ArrayList<IPerson>();
+                    occupant.add(employee);
+                    Room cabinet = null;
+                    while(!cabinetFound) {
+                        if ((cabStr = ConvinienceIO.getInput("Cabinet: ", true)) != null) {
+                            cabinet = Hospital.shared.getWard(cabStr);
+                            if (cabinet == null) {
+                                System.out.printf("Cabinet %s does not exist. Create cabinet %s? y/n: ", cabStr, cabStr);
+                                String yOrN = ConvinienceIO.getInput("");
+                                while (true) {
+                                    if (yOrN.equalsIgnoreCase("y") || yOrN.equalsIgnoreCase("n")) {
+                                        break;
+                                    } else {
+                                        yOrN = ConvinienceIO.getInput("try again. y/n: ");
+                                    }
+                                }
+                                if (yOrN.equalsIgnoreCase("y")){
+                                    cabinet = Hospital.shared.addCabinet(cabStr);
+                                }
+                                cabinetFound = true;
+                            } else {
+                                cabinetFound = true;
+                            }
+                            var prevLocation = employee.getLocation();
+                            if (prevLocation != null) {
+                                prevLocation.removeOccupants(occupant);
+                            }
+                            if (cabinet != null) {
+                                cabinet.addOccupants(occupant);
+                            }
+                            employee.setLocation(cabinet);
+                        } else {
+                            cabinetFound = true;
+                            var prevLocation = employee.getLocation();
+                            if (prevLocation != null) {
+                                prevLocation.removeOccupants(occupant);
+                            }
+                            if (cabinet != null) {
+                                cabinet.addOccupants(occupant);
+                            }
+                            employee.setLocation(cabinet);
+                            //might not have a cabinet
+                        }
+                    }
+                    break;
+                case 8:
+                    System.out.print("Enter new salary: ");
+                    input = new Scanner(System.in);
+                    String newSalary = input.nextLine();
+                    try {
+                        int salary = Integer.parseInt(newSalary);
+                        employee.setSalary(salary);
+                    } catch (NumberFormatException e) {
+
+                    }
+                    break;
+                case 9:
+                    System.out.print("Enter new rank: ");
+                    input = new Scanner(System.in);
+                    String rank = input.nextLine();
+                    employee.setRank(rank);
+                    break;
+                case 0:
+                    return;
+                default:
+                    break;
+            }
+            if (actionNum > 0 && actionNum <= 9) {
+                employee.setDateModified(new Date());
+                Hospital.shared.serialize();
+            } else if (actionNum == 0){
+                return;
+            }
+        }
+    }
     private void reloadEmployeesTable() {
         employeesTableView.clear();
         var employees = Hospital.shared.getEmployees();

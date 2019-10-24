@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Person implements IPerson, Serializable {
+public class Person implements IPerson {
     private String name;
     private String secondName;
     private String lastName;
@@ -91,62 +91,11 @@ public class Person implements IPerson, Serializable {
     public Date getModificationDate() {
         return this.dateModified;
     }
-
-    static Person random() {
-        Person person = new Person();
-        person.setName("Some");
-        person.setSecondName("Interesting");
-        person.setSurname("Person");
-        return person;
-    }
     public Person () {
         this.dateAdded = new Date();
         this.dateModified = new Date();
     }
 
-    @Override
-    public int satisfies(String query) {
-        var tags = query.split(" ");
-        int fits = 0;
-        for (int i = 0; i < tags.length; i++) {
-            if (tags[i].equalsIgnoreCase(this.name)) {
-                fits += 1;
-            }
-            if (tags[i].equalsIgnoreCase(this.secondName)) {
-
-            }
-            if (tags[i].equalsIgnoreCase(this.lastName)) {
-                fits += 2;
-            }
-            var dateFormat = new SimpleDateFormat("dd.mm.yyyy");
-
-            if (tags[i].equalsIgnoreCase(dateFormat.format(this.dob))) {
-                fits += 2;
-            }
-        }
-        return fits;
-    }
-
-    @Override
-    public boolean reallySatisfies(String query) {
-        var tags = query.split(" ");
-        int fits = 0;
-        for (int i = 0; i < tags.length; i++) {
-            if (tags[i].equalsIgnoreCase(this.name)) {
-                fits += 1;
-            }
-            if (tags[i].equalsIgnoreCase(this.secondName)) {
-
-            }
-            if (tags[i].equalsIgnoreCase(this.lastName)) {
-                fits += 1;
-            }
-        }
-        if (fits > 2) {
-            return true;
-        }
-        return false;
-    }
     public boolean fitsDescription(int id, String name, String secondName, String lastName, Date dob) {
         int level = 0;
         if (id == 0 || this.id == id) {
@@ -200,5 +149,14 @@ public class Person implements IPerson, Serializable {
     @Override
     public void setId(int id) {
         this.id = id;
+    }
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+    public Date getDateAdded() {
+        return this.dateAdded;
+    }
+    public void setDateModified(Date dateModified) {
+        this.dateModified = dateModified;
     }
 }

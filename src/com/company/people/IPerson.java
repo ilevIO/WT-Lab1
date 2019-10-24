@@ -5,7 +5,7 @@ import com.company.Room;
 
 import java.util.Date;
 
-public interface IPerson extends ISearchable {
+public interface IPerson {
     void setName(String name);
     String getName();
     void setSecondName(String name);
@@ -24,4 +24,7 @@ public interface IPerson extends ISearchable {
     Room getLocation();
     int getId();
     void setId(int id);
+    void setDateAdded(Date dateAdded);
+    Date getDateAdded();
+    void setDateModified(Date dateModified);
 }
