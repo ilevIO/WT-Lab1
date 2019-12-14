@@ -2,25 +2,38 @@ package com.company.people;
 
 import com.company.Room;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@XmlType(name="person")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person implements IPerson {
+    @XmlElement(name="id", required = true)
+    private int id;
+    @XmlElement(name="name", required = true)
     private String name;
+    @XmlElement(name="second_name", required = true)
     private String secondName;
+    @XmlElement(name="last_name", required = true)
     private String lastName;
+    @XmlElement(name="dob", required = true)
     private Date dob;
     private String note;
-    protected Date dateAdded;
-    protected Date dateModified;
+    private Date dateAdded;
+    private Date dateModified;
+    @XmlElement(name="location", required = true)
     private Room location;
-    private int id;
+
     @Override
     public void setName(String name) {
         this.name = name;
     }
-
+    /*@Override
+    public PersonInfo getInfo(){
+        return this;
+    }*/
     @Override
     public String getName() {
         return this.name;
@@ -158,5 +171,25 @@ public class Person implements IPerson {
     }
     public void setDateModified(Date dateModified) {
         this.dateModified = dateModified;
+    }
+
+    @Override
+    public void create() {
+
+    }
+
+    @Override
+    public IPerson retrieve() {
+        return null;
+    }
+
+    @Override
+    public void update() {
+        this.setDateModified(new Date());
+    }
+
+    @Override
+    public void delete() {
+
     }
 }

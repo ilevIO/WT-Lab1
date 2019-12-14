@@ -2,13 +2,19 @@ package com.company;
 
 import com.company.people.IPerson;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@XmlType(name="room")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Room {
+    @XmlElement(name="name", required = true)
     private String name;
+    @XmlList
     private List occupants = new ArrayList();
+
     public void setName(String name) {
         this.name = name;
     }

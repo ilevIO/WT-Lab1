@@ -2,15 +2,22 @@ package com.company.people;
 
 import com.company.Room;
 
+import javax.xml.bind.annotation.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@XmlType(name="patient")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Patient extends Person implements IPatient {
+    @XmlList
     private List doctors = new ArrayList();
+    @XmlElement(name="room")
     private Room ward = null;
+    @XmlElement(name="diagnosis")
     private String diagnosis;
+
     public Patient() {
     }
     /*public static Patient random() {
@@ -33,8 +40,7 @@ public class Patient extends Person implements IPatient {
 
     @Override
     public void setDiagnosis(String diagnosis) {
-
-        this.dateModified = new Date();
+        this.update();
     }
 
     @Override
@@ -45,7 +51,7 @@ public class Patient extends Person implements IPatient {
     @Override
     public void assignDoctor(IEmployee doctor) {
         doctors.add(doctor);
-        this.dateModified = new Date();
+        this.update();
     }
 
     @Override
@@ -54,7 +60,7 @@ public class Patient extends Person implements IPatient {
         for (; i < doctors.size() && !doctors.get(i).equals(doctor); i++) {
         }
         doctors.remove(i);
-        this.dateModified = new Date();
+        this.update();
     }
 
     @Override

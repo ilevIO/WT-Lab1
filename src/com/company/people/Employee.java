@@ -2,17 +2,24 @@ package com.company.people;
 
 import com.company.*;
 
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@XmlType(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Employee extends Person implements IEmployee {
+    @XmlElement(name="salary", required = true)
     private int salary;
+    @XmlElement(name="room", required = true)
     private Room cabinet;
+    @XmlElement(name="rank", required = true)
     private String rank;
+    @XmlList
     private List patients = new ArrayList<IPatient>();
+
     @Override
-    public Comparable getSalary() {
+    public int getSalary() {
         return this.salary;
     }
 
@@ -29,16 +36,6 @@ public class Employee extends Person implements IEmployee {
     @Override
     public void setPersonalData(IPersonalData personalData) {
 
-    }
-
-    @Override
-    public void assignDepartment(IDepartment department) {
-
-    }
-
-    @Override
-    public IDepartment getDepartment() {
-        return null;
     }
 
     @Override

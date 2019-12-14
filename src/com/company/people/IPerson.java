@@ -27,4 +27,9 @@ public interface IPerson {
     void setDateAdded(Date dateAdded);
     Date getDateAdded();
     void setDateModified(Date dateModified);
+    //PersonInfo getInfo();
+    void create();
+    IPerson retrieve();
+    void update();
+    void delete();
 }

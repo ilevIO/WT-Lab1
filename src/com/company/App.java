@@ -1,13 +1,11 @@
 package com.company;
 
+import com.company.ViewControllers.ActionMenu;
+import com.company.ViewControllers.MainMenu;
+
 public class App implements IAppDelegate {
     private ActionMenu currentMenu;
     private ActionMenu mainMenu;
-    //public static Hospital hospital = new Hospital();
-    //private ArrayList<PageMenu> menues;
-    public void drawMainMenu() {
-
-    }
     private void initiateMenu() {
         mainMenu = new MainMenu();
         mainMenu.appDelegate = this;
