@@ -2,79 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d622906f-7486-48a4-8b45-06d40cdac5b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/DBController/DBController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/DBController/DBXmlMigrator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/Hospital/HospitalSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/PeopleSortingOptions/SortPeopleByDateAdded.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/PeopleSortingOptions/SortPeopleByDateModified.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/PeopleSortingOptions/SortPeopleByName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/XMLSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/company/people/PersonInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Parsers/DOMParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Parsers/SAXParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/Parsers/StAXParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/company/XMLStuff/XSDValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Hospital.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Hospital.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/Hospital.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1/META-INF/Lab1.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/ActionMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/CabinetsMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/EmployeesMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/HospitalData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/HospitalSerializable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/HospitalToSave.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IAppDelegate.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/IAppDelegate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IDepartment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IHospital.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IHospitalData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IPageMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/IndexPath.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/MainMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/MenuAction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/PatientsMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/SearchEngine.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/SortPeopleByDateAdded.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/SortPeopleByDateModified.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/SortPeopleByName.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/TableView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/WardsMenu.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Doctordeprecated.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/IEmployee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/IEmployee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/IPerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/IPerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/DBController/DBController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/DBController/DBController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/DBController/DBXmlMigrator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/DBController/DBXmlMigrator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/Hospital.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/Hospital.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/TestClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/TestClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/TestClasses.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/Hospital/TestClasses.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/XMLSerializer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Patient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Lab1/com/company/people/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/ActionMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/ActionMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Cabinet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/CabinetsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/CabinetsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/EmployeesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/EmployeesMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital/Hospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/HospitalData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/HospitalSerializable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital/HospitalSerializable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/HospitalToSave.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IAppDelegate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/IAppDelegate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IDepartment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IHospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital/IHospital.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IHospitalData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital/IHospitalData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IPageMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/IPageMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/IndexPath.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/MenuAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/MenuAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/PatientsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/PatientsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/SearchEngine.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/TableView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/TableView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Ward.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/WardsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/ViewControllers/WardsMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/Doctor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/IEmployee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/IEmployee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/IPerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/IPerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DBController/DBController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DBController/DBController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/DBController/DBXmlMigrator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/DBController/DBXmlMigrator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Hospital/Hospital.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Hospital/Hospital.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/XMLSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/XMLStuff/XMLSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/people/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/people/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/people/Person.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +45,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/jaxb-impl-2.4.0-b180830.0438.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/mysql-connector-java-8.0.18.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -164,5 +110,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/DBController/DBXmlMigrator.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

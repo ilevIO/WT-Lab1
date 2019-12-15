@@ -1,7 +1,9 @@
 package com.company.Hospital;
 
+import com.company.DBController.DBController;
 import com.company.DBController.DBXmlMigrator;
 import com.company.Room;
+import com.company.XMLStuff.XSDValidator;
 import com.company.people.*;
 
 import javax.xml.bind.JAXBContext;
@@ -193,17 +195,16 @@ public class Hospital implements Serializable {
         }
     }
     public void migrate() {
-        String ipStr = "127.0.0.1:8888";
-        String dbName = "Hospital";
-        String url = "jdbc:mysql://" + ipStr + "/" + dbName;
-        String user = "root";
-        String password = "admin";
-        try {
-            Connection conn = DriverManager.getConnection(url, user, password);
-            DBXmlMigrator xmlMigrator = new DBXmlMigrator(conn, "Hospital", "Patients", "Employees");
-            xmlMigrator.migrate("Hospital.xml");
-        } catch (SQLException e) {
 
+        //XSDValidator xsdValidator = new XSDValidator();
+        //xsdValidator.validate("Hospital.xsd", "Hospital.xml");
+        DBController dbController = new DBController();
+        Connection conn = dbController.connect();
+        if (conn != null) {
+            DBXmlMigrator xmlMigrator = new DBXmlMigrator(conn);
+            xmlMigrator.migrate("Hospital.xml");
+        } else {
+            System.out.println("Could not connect to DataBase");
         }
     }
     private Hospital () {

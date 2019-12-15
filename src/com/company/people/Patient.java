@@ -16,7 +16,7 @@ public class Patient extends Person implements IPatient {
     @XmlElement(name="room")
     private Room ward = null;
     @XmlElement(name="diagnosis")
-    private String diagnosis;
+    private String diagnosis = "unassigned";
 
     public Patient() {
     }

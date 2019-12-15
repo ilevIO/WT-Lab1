@@ -1,4 +1,4 @@
-package com.company;
+package com.company.XMLStuff;
 
 import com.company.Hospital.HospitalSerializable;
 
@@ -22,6 +22,5 @@ public class XMLSerializer {
         decoder = new XMLDecoder(new BufferedInputStream(new FileInputStream(filePath)));
         Object objectData = decoder.readObject();
         return objectData;
-        //return null;
     }
 }

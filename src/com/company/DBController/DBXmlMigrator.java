@@ -2,6 +2,7 @@ package com.company.DBController;
 
 import com.company.Hospital.HospitalSerializable;
 import com.company.Hospital.HospitalSerializer;
+import com.company.XMLStuff.XSDValidator;
 import com.company.people.Employee;
 import com.company.people.Patient;
 
@@ -14,55 +15,52 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class DBXmlMigrator {
-    private String dbName;
     private Connection connection;
 
-    private static final String insertPatientQuery =
-            "insert into patients (p_id, name, second_name, last_name, dob, diagnosis, location) values(?,?,?,?,?,?,?);";
-    private static final String insertMedSpecQuery =
-            "insert into employees (p_id, name, second_name, last_name, dob, rank, salary, location) values(?,?,?,?,?,?,?,?);";
-    private static final String xsdDirectoryName = "xsd";
-    private static final String xmlDirectoryName = "xml";
+    private static String insertPatientQuery =
+            "insert into Patients (p_id, name, second_name, last_name, dob, diagnosis, location) values(?,?,?,?,?,?,?);";
+    private static String insertEmployeeQuery =
+            "insert into Employees (p_id, name, second_name, last_name, dob, rank, salary, location) values(?,?,?,?,?,?,?,?);";
 
-    private String patientsTableName;
-    private String employeesTableName;
 
-    public DBXmlMigrator(Connection connection, String dbName, String patientsTableName, String employeesTableName){
+    public DBXmlMigrator(Connection connection){
         this.connection = connection;
-        this.dbName = dbName;
-        this.patientsTableName = patientsTableName;
-        this.employeesTableName = employeesTableName;
     }
-    public boolean migrate(String filePath){
+    public boolean migrate(String xmlFilePath){
         HospitalSerializer deserializer = new HospitalSerializer();
-        Object hospitalData = null;
-        hospitalData = deserializer.deserialize(filePath);
+        HospitalSerializable hospitalData = null;
+        hospitalData = deserializer.deserialize(xmlFilePath);
+        migrateHospital(hospitalData);
         return false;
     }
-    private boolean migrateHospital(String tableName, HospitalSerializable hospitalData) {
-        List<Employee> employees = hospitalData.getEmployees();
-        for (int i = 0; i < employees.size(); i++) {
-            migrateEmployee(employeesTableName, employees.get(i));
-        }
+    private boolean migrateHospital(HospitalSerializable hospitalData) {
         List<Patient> patients = hospitalData.getPatients();
         for (int i = 0; i < patients.size(); i++) {
-            migratePatient(patientsTableName, patients.get(i));
+            migratePatient(patients.get(i));
+        }
+        List<Employee> employees = hospitalData.getEmployees();
+        for (int i = 0; i < employees.size(); i++) {
+            migrateEmployee(employees.get(i));
         }
         return true;
     }
-    private boolean migrateEmployee(String tableName, Employee employee){
+    private boolean migrateEmployee(Employee employee){
         PreparedStatement preparedStatement;
         try {
-            preparedStatement = connection.prepareStatement(insertPatientQuery);
+            preparedStatement = connection.prepareStatement(insertEmployeeQuery);
             preparedStatement.setInt(1,employee.getId());
             preparedStatement.setString(2, employee.getName());
             preparedStatement.setString(3, employee.getSecondName());
             preparedStatement.setString(4, employee.getSurname());
-            preparedStatement.setDate(5, (Date)employee.getDOB());
+            preparedStatement.setDate(5, new java.sql.Date(employee.getDOB().getTime()));
             preparedStatement.setString(6, employee.getRank());
-            preparedStatement.setInt(6, employee.getSalary());
-            preparedStatement.setString(7, employee.getLocation().getName());
-
+            preparedStatement.setInt(7, employee.getSalary());
+            String location = "unassigned";
+            if (employee.getLocation() != null) {
+                location = employee.getLocation().getName();
+            }
+            preparedStatement.setString(8, location);
+            System.out.println(preparedStatement.toString());
             if(preparedStatement.executeUpdate() != 1){
                 return false;
             }
@@ -71,7 +69,7 @@ public class DBXmlMigrator {
         }
         return true;
     }
-    private boolean migratePatient(String tableName, Patient patient){
+    private boolean migratePatient(Patient patient){
         PreparedStatement preparedStatement;
         try {
             preparedStatement = connection.prepareStatement(insertPatientQuery);
@@ -79,10 +77,14 @@ public class DBXmlMigrator {
             preparedStatement.setString(2, patient.getName());
             preparedStatement.setString(3, patient.getSecondName());
             preparedStatement.setString(4, patient.getSurname());
-            preparedStatement.setDate(5, (Date)patient.getDOB());
+            preparedStatement.setDate(5, new java.sql.Date(patient.getDOB().getTime()));
             preparedStatement.setString(6, patient.getDiagnosis());
-            preparedStatement.setString(7, patient.getLocation().getName());
-
+            String location = "unassigned";
+            if (patient.getLocation() != null) {
+                location = patient.getLocation().getName();
+            }
+            preparedStatement.setString(7, location);;
+            System.out.println(preparedStatement.toString());
             if(preparedStatement.executeUpdate() != 1){
                 return false;
             }
